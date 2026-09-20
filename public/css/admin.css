@@ -37,7 +37,7 @@ body.adm { background: #f2f4f8; }
   color: inherit;
 }
 
-.adm-atas__merek img { width: 1.75rem; height: 1.75rem; }
+.adm-atas__merek img { width: 1.75rem; height: 1.75rem; border-radius: 50%; }
 
 .adm-atas__nama {
   font-family: var(--teriak);

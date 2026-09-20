@@ -601,6 +601,16 @@
   text-align: center;
 }
 
+.tiket__lambang {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto var(--s-4);
+  /* Lambangnya bulat; kliping lingkaran membuang sudut berkas gambarnya. */
+  border-radius: 50%;
+  border: 2px solid var(--pasir);
+}
+
 .tiket__acara {
   font-family: var(--teriak);
   font-size: var(--t-2);
@@ -686,6 +696,14 @@
   .nav, .puncak, .kaki, .wa-apung, .rel, .cetak-sembunyi { display: none !important; }
   .isi-halaman { padding: 0; }
   .tiket { box-shadow: none; max-width: 100%; }
+
+  /* Tanpa ini peramban membuang latar biru kepala tiket, dan teks terang di
+     atasnya ikut lenyap di kertas putih. Lambang PGRI juga jadi tidak tercetak. */
+  .tiket,
+  .tiket * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
 }
 
 /* ==========================================================================

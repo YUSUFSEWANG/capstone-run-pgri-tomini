@@ -302,14 +302,11 @@ Letakkan nginx di depannya untuk HTTPS, lalu setel `TRUST_PROXY=true`.
 
 ## Hal yang perlu diputuskan panitia
 
-1. **Aset resmi.** `public/assets/logo.svg` masih lambang sementara. Ganti berkasnya
-   dengan lambang PGRI resmi beresolusi tinggi bila sudah tersedia — nama berkasnya
-   tidak perlu diubah.
-2. **Hadiah juara.** Halaman Benefit menyebut "rincian diumumkan menjelang hari
+1. **Hadiah juara.** Halaman Benefit menyebut "rincian diumumkan menjelang hari
    pelaksanaan". Perbarui teksnya di `public/index.html` setelah kategori dan nominal final.
-3. **Kuota jersey.** Angka awal (S 40, M 120, L 150, XL 90, XXL 40) adalah perkiraan.
+2. **Kuota jersey.** Angka awal (S 40, M 120, L 150, XL 90, XXL 40) adalah perkiraan.
    Sesuaikan di menu Pengaturan setelah order ke vendor ditetapkan.
-4. **Masa pendaftaran.** Terpasang 21 September – 10 Oktober 2026 sesuai pengumuman.
+3. **Masa pendaftaran.** Terpasang 21 September – 10 Oktober 2026 sesuai pengumuman.
    Bisa diperpanjang kapan saja lewat menu Pengaturan tanpa mengubah kode.
 
 ---

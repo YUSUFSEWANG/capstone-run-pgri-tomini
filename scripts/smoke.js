@@ -19,7 +19,7 @@ const CEK = [
   ['GET', '/css/main.css', 200],
   ['GET', '/js/api.js', 200],
   ['GET', '/js/main.js', 200],
-  ['GET', '/assets/logo.svg', 200],
+  ['GET', '/assets/logo-pgri.jpg', 200],
   ['GET', '/admin/login', 200],
   ['GET', '/admin', 302],
   ['GET', '/api/admin/stats', 401],

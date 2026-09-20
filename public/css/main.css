@@ -136,7 +136,8 @@
   color: inherit;
 }
 
-.nav__logo { width: 2.1rem; height: 2.1rem; flex: none; }
+/* Lambang PGRI berbentuk bulat; kliping lingkaran membuang sudut berkasnya. */
+.nav__logo { width: 2.1rem; height: 2.1rem; flex: none; border-radius: 50%; }
 
 .nav__nama {
   font-family: var(--teriak);

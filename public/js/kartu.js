@@ -57,6 +57,8 @@
     wadah.innerHTML = `
       <div class="tiket">
         <div class="tiket__kepala">
+          <img class="tiket__lambang" src="/assets/logo-pgri.jpg"
+               alt="Lambang Persatuan Guru Republik Indonesia" width="64" height="64">
           <p class="tiket__acara">Fun Run<span>PGRI Tomini 2026</span></p>
           <p class="tiket__meta">${aman(k.event.date)} · ${aman(k.event.distance)}</p>
         </div>
