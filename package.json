@@ -1,0 +1,60 @@
+{
+  "name": "funrun-pgri-tomini",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Situs resmi & sistem pendaftaran Fun Run PGRI Tomini 2026",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+
+    "db:migrate": "node src/database/migrate.js",
+    "db:seed": "node src/database/seed.js",
+    "db:reset": "node src/database/migrate.js --fresh && node src/database/seed.js",
+    "db:backup": "node scripts/backup.js",
+
+    "test": "jest --runInBand",
+    "test:cover": "jest --runInBand --coverage",
+    "test:e2e": "node scripts/e2e.js",
+    "test:e2e:open": "node scripts/e2e.js --open",
+
+    "smoke": "node scripts/smoke.js",
+    "demo": "node scripts/seed-demo.js",
+    "tangkap": "node scripts/tangkap-layar.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^11.8.1",
+    "better-sqlite3-session-store": "^0.1.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "express-session": "^1.18.1",
+    "helmet": "^8.0.0",
+    "multer": "^2.0.1",
+    "qrcode": "^1.5.4",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "cypress": "^13.17.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.9",
+    "puppeteer-core": "^23.11.1",
+    "supertest": "^7.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/cypress/"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/app.js",
+      "!src/database/seed.js"
+    ]
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

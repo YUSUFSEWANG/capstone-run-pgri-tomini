@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Lambang Fun Run PGRI Tomini">
+  <title>Fun Run PGRI Tomini</title>
+  <!-- Perisai — bentuk dasar lambang PGRI. Ganti berkas ini dengan lambang
+       resmi beresolusi tinggi bila panitia sudah menyediakannya. -->
+  <path d="M32 2 6 10v24c0 14 11 24.5 26 28 15-3.5 26-14 26-28V10L32 2z" fill="#0b3fd9"/>
+  <path d="M32 7 11 13.4v20.8c0 11.4 8.9 20 21 23.1 12.1-3.1 21-11.7 21-23.1V13.4L32 7z" fill="#fff8ee"/>
+  <!-- Obor: nyala pendidikan -->
+  <path d="M32 13c-3.4 4-5.1 7.2-5.1 9.7 0 3 2.3 5.4 5.1 5.4s5.1-2.4 5.1-5.4c0-2.5-1.7-5.7-5.1-9.7z" fill="#ff2e4d"/>
+  <rect x="30" y="28" width="4" height="12" rx="1" fill="#0a1128"/>
+  <!-- Pelari -->
+  <circle cx="24.5" cy="41" r="2.6" fill="#0b3fd9"/>
+  <path d="M22 45.5l4.6-1.4 3.4 2.6-1.8 3.1-3.1-2-4.4 3.6-1.9-2.3 3.2-3.6z" fill="#0b3fd9"/>
+  <circle cx="40" cy="41" r="2.6" fill="#ff2e4d"/>
+  <path d="M37.5 45.5l4.6-1.4 3.4 2.6-1.8 3.1-3.1-2-4.4 3.6-1.9-2.3 3.2-3.6z" fill="#ff2e4d"/>
+  <path d="M14 51h36" stroke="#ffd400" stroke-width="3" stroke-linecap="round"/>
+</svg>

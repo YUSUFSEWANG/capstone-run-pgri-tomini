@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formulir Pendaftaran — Fun Run PGRI Tomini 2026</title>
+<meta name="description" content="Isi data pendaftaran Fun Run PGRI Tomini 2026. Pilih paket, ukuran jersey, lalu dapatkan nomor registrasi dan petunjuk pembayaran.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0b3fd9">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/halaman.css">
+</head>
+<body>
+
+<a class="lewati" href="#isi">Lompat ke formulir</a>
+
+<header class="nav">
+  <div class="nav__dalam">
+    <a class="nav__merek" href="/">
+      <img class="nav__logo" src="/assets/logo.svg" alt="" width="34" height="34">
+      <span class="nav__nama">Fun Run<span>PGRI Tomini</span></span>
+    </a>
+    <div class="nav__aksi">
+      <a class="tbl tbl--terang tbl--kecil" href="/cek">Cek pendaftaran</a>
+    </div>
+  </div>
+</header>
+
+<section class="puncak butir">
+  <div class="puncak__dalam">
+    <p class="puncak__remah"><a href="/">Beranda</a> <span aria-hidden="true">/</span> <span>Pendaftaran</span></p>
+    <h1 class="puncak__judul">Formulir <em>pendaftaran</em></h1>
+    <p class="puncak__antar">Isi sekali, langsung dapat nomor registrasi. Pastikan nama dan nomor WhatsApp benar — keduanya dipakai untuk kartu peserta dan pengumuman dari panitia.</p>
+
+    <ol class="tahap">
+      <li class="tahap__item" aria-current="step"><span class="tahap__nomor">TAHAP 1</span>Isi data</li>
+      <li class="tahap__item"><span class="tahap__nomor">TAHAP 2</span>Transfer biaya</li>
+      <li class="tahap__item"><span class="tahap__nomor">TAHAP 3</span>Unggah bukti</li>
+      <li class="tahap__item"><span class="tahap__nomor">TAHAP 4</span>Terima nomor BIB</li>
+    </ol>
+  </div>
+</section>
+
+<main class="isi-halaman" id="isi">
+
+  <!-- ============================================= pendaftaran ditutup -->
+  <div class="tata tata--sempit sembunyi" id="panelTutup">
+    <div class="kosong">
+      <h2 class="kosong__judul">Pendaftaran sedang ditutup</h2>
+      <p class="kosong__teks" id="alasanTutup">Panitia belum membuka pendaftaran.</p>
+      <p style="display:flex;gap:var(--s-4);flex-wrap:wrap;justify-content:center">
+        <a class="tbl tbl--utama" href="/">Kembali ke beranda</a>
+        <a class="tbl tbl--hantu" href="https://wa.me/6281243740109" target="_blank" rel="noopener">Tanya panitia</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- ==================================================== formulir -->
+  <div class="tata" id="panelForm">
+    <div>
+      <div class="pesan sembunyi" id="kotakPesan" role="alert" aria-live="assertive"></div>
+
+      <form id="formDaftar" novalidate>
+
+        <!-- ------------------------------------------- data peserta -->
+        <fieldset class="gugus">
+          <legend class="gugus__kepala">
+            <span class="gugus__nomor">01</span>
+            <span>
+              <span class="gugus__judul">Data peserta</span>
+              <span class="gugus__ket">Tulis sesuai kartu identitas.</span>
+            </span>
+          </legend>
+
+          <label class="bidang" data-bidang="full_name">
+            <span class="bidang__label">Nama lengkap <span class="sorot">*</span></span>
+            <input class="isian" type="text" name="full_name" autocomplete="name" maxlength="80" required
+                   placeholder="Contoh: Siti Rahmawati">
+            <p class="bidang__galat"></p>
+          </label>
+
+          <div class="bidang" data-bidang="gender">
+            <span class="bidang__label">Jenis kelamin <span class="sorot">*</span></span>
+            <div class="pilihan pilihan--baris">
+              <label class="pilihan__item">
+                <input type="radio" name="gender" value="L" required>
+                <span class="pilihan__isi">Laki-laki</span>
+              </label>
+              <label class="pilihan__item">
+                <input type="radio" name="gender" value="P" required>
+                <span class="pilihan__isi">Perempuan</span>
+              </label>
+            </div>
+            <p class="bidang__galat"></p>
+          </div>
+
+          <div class="pasangan">
+            <label class="bidang" data-bidang="birth_date">
+              <span class="bidang__label">Tanggal lahir <span class="sorot">*</span></span>
+              <input class="isian" type="date" name="birth_date" required
+                     min="1936-11-25" max="2016-11-24">
+              <p class="bidang__bantuan">Peserta minimal berusia 10 tahun saat hari acara.</p>
+              <p class="bidang__galat"></p>
+            </label>
+
+            <label class="bidang" data-bidang="phone">
+              <span class="bidang__label">Nomor WhatsApp <span class="sorot">*</span></span>
+              <input class="isian" type="tel" name="phone" inputmode="tel" autocomplete="tel"
+                     maxlength="20" required placeholder="0812 3456 7890">
+              <p class="bidang__bantuan">Panitia mengabari status pembayaran lewat nomor ini.</p>
+              <p class="bidang__galat"></p>
+            </label>
+          </div>
+
+          <div class="pasangan">
+            <label class="bidang" data-bidang="email">
+              <span class="bidang__label">Email <span class="bidang__bantuan" style="display:inline">(opsional)</span></span>
+              <input class="isian" type="email" name="email" autocomplete="email" maxlength="120"
+                     placeholder="nama@email.com">
+              <p class="bidang__galat"></p>
+            </label>
+
+            <label class="bidang" data-bidang="institution">
+              <span class="bidang__label">Instansi / ranting PGRI <span class="bidang__bantuan" style="display:inline">(opsional)</span></span>
+              <input class="isian" type="text" name="institution" maxlength="120"
+                     placeholder="Contoh: SDN 1 Tomini">
+              <p class="bidang__bantuan">Isi "Umum" kalau kamu bukan dari lingkungan sekolah.</p>
+              <p class="bidang__galat"></p>
+            </label>
+          </div>
+
+          <label class="bidang" data-bidang="address" style="margin-bottom:0">
+            <span class="bidang__label">Alamat <span class="bidang__bantuan" style="display:inline">(opsional)</span></span>
+            <textarea class="isian" name="address" maxlength="200" rows="2"
+                      placeholder="Desa / kelurahan, kecamatan"></textarea>
+            <p class="bidang__galat"></p>
+          </label>
+        </fieldset>
+
+        <!-- ------------------------------------------ paket & jersey -->
+        <fieldset class="gugus">
+          <legend class="gugus__kepala">
+            <span class="gugus__nomor">02</span>
+            <span>
+              <span class="gugus__judul">Paket &amp; jersey</span>
+              <span class="gugus__ket">Bedanya hanya jersey. Benefit lain sama.</span>
+            </span>
+          </legend>
+
+          <div class="bidang" data-bidang="package">
+            <span class="bidang__label">Pilih paket <span class="sorot">*</span></span>
+            <div class="pilih-paket" id="pilihPaket">
+              <label class="pilih-paket__item">
+                <input type="radio" name="package" value="lengkap" required>
+                <span class="pilih-paket__isi">
+                  <span class="pilih-paket__nama">Lengkap</span>
+                  <b class="pilih-paket__harga" data-harga="lengkap">Rp120.000</b>
+                  <span class="pilih-paket__ket">Jersey resmi + BIB + medali + refreshment + doorprize.</span>
+                </span>
+              </label>
+              <label class="pilih-paket__item">
+                <input type="radio" name="package" value="hemat" required>
+                <span class="pilih-paket__isi">
+                  <span class="pilih-paket__nama">Hemat</span>
+                  <b class="pilih-paket__harga" data-harga="hemat">Rp60.000</b>
+                  <span class="pilih-paket__ket">BIB + medali + refreshment + doorprize. Tanpa jersey.</span>
+                </span>
+              </label>
+            </div>
+            <p class="bidang__galat"></p>
+          </div>
+
+          <div class="bidang sembunyi" data-bidang="jersey_size" id="bidangUkuran" style="margin-bottom:0">
+            <span class="bidang__label">Ukuran jersey <span class="sorot">*</span></span>
+            <div class="pilihan pilihan--ukuran" id="pilihUkuran"></div>
+            <p class="bidang__bantuan">Angka kecil adalah sisa stok. Ukuran yang dicoret sudah habis.</p>
+            <p class="bidang__galat"></p>
+
+            <details class="panduan">
+              <summary class="panduan__soal">Lihat panduan ukuran</summary>
+              <table class="panduan__tabel">
+                <thead><tr><th>Ukuran</th><th>Lebar dada (cm)</th><th>Panjang (cm)</th></tr></thead>
+                <tbody id="tabelUkuran"></tbody>
+              </table>
+            </details>
+          </div>
+        </fieldset>
+
+        <!-- --------------------------------- kontak darurat & kesehatan -->
+        <fieldset class="gugus">
+          <legend class="gugus__kepala">
+            <span class="gugus__nomor">03</span>
+            <span>
+              <span class="gugus__judul">Kontak darurat &amp; kesehatan</span>
+              <span class="gugus__ket">Dipakai tim medis kalau terjadi sesuatu di jalur.</span>
+            </span>
+          </legend>
+
+          <div class="pasangan">
+            <label class="bidang" data-bidang="emergency_name">
+              <span class="bidang__label">Nama kontak darurat <span class="sorot">*</span></span>
+              <input class="isian" type="text" name="emergency_name" maxlength="80" required
+                     placeholder="Nama keluarga atau rekan">
+              <p class="bidang__galat"></p>
+            </label>
+
+            <label class="bidang" data-bidang="emergency_phone">
+              <span class="bidang__label">Nomor kontak darurat <span class="sorot">*</span></span>
+              <input class="isian" type="tel" name="emergency_phone" inputmode="tel" maxlength="20" required
+                     placeholder="0812 3456 7890">
+              <p class="bidang__bantuan">Harus berbeda dari nomormu sendiri.</p>
+              <p class="bidang__galat"></p>
+            </label>
+          </div>
+
+          <label class="bidang" data-bidang="blood_type">
+            <span class="bidang__label">Golongan darah</span>
+            <select class="isian" name="blood_type">
+              <option value="">Pilih golongan darah</option>
+            </select>
+            <p class="bidang__galat"></p>
+          </label>
+
+          <label class="bidang" data-bidang="health_note" style="margin-bottom:0">
+            <span class="bidang__label">Riwayat atau catatan kesehatan <span class="bidang__bantuan" style="display:inline">(opsional)</span></span>
+            <textarea class="isian" name="health_note" maxlength="300" rows="2"
+                      placeholder="Contoh: asma, alergi obat tertentu, punya riwayat jantung"></textarea>
+            <p class="bidang__bantuan">Kosongkan kalau tidak ada. Informasi ini hanya dibaca panitia dan tim medis.</p>
+            <p class="bidang__galat"></p>
+          </label>
+        </fieldset>
+
+        <!-- --------------------------------------------- pernyataan -->
+        <fieldset class="gugus">
+          <legend class="gugus__kepala">
+            <span class="gugus__nomor">04</span>
+            <span>
+              <span class="gugus__judul">Pernyataan</span>
+              <span class="gugus__ket">Baca dulu sebelum mengirim.</span>
+            </span>
+          </legend>
+
+          <div class="bidang" data-bidang="agreement" style="margin-bottom:0">
+            <label class="centang">
+              <input type="checkbox" name="agreement" value="true" required>
+              <span>Saya menyatakan dalam kondisi sehat dan mampu menempuh 7 kilometer, data yang saya isi benar, serta memahami bahwa biaya pendaftaran tidak dapat dikembalikan. Saya mengikuti acara ini atas kesadaran dan tanggung jawab sendiri.</span>
+            </label>
+            <p class="bidang__galat"></p>
+          </div>
+        </fieldset>
+
+        <button class="tbl tbl--utama tbl--penuh" type="submit" id="tombolKirim">Kirim pendaftaran</button>
+        <p class="bidang__bantuan" style="margin-top:var(--s-3);text-align:center">Belum ada pembayaran di tahap ini. Petunjuk transfer muncul setelah data terkirim.</p>
+      </form>
+    </div>
+
+    <!-- ------------------------------------------------- ringkasan -->
+    <aside class="tata__sisi">
+      <div class="ringkas">
+        <p class="ringkas__judul">Ringkasan</p>
+        <dl>
+          <div class="ringkas__baris"><dt>Acara</dt><dd>Fun Run PGRI Tomini 2026</dd></div>
+          <div class="ringkas__baris"><dt>Tanggal</dt><dd>24 Nov 2026</dd></div>
+          <div class="ringkas__baris"><dt>Jarak</dt><dd>7 KM</dd></div>
+          <div class="ringkas__baris"><dt>Paket</dt><dd id="ringkasPaket">Belum dipilih</dd></div>
+          <div class="ringkas__baris"><dt>Jersey</dt><dd id="ringkasJersey">—</dd></div>
+        </dl>
+        <div class="ringkas__total">
+          <span>Total</span>
+          <b id="ringkasTotal">Rp0</b>
+        </div>
+        <p class="ringkas__catatan" id="ringkasCatatan">Pilih paket untuk melihat nominal yang harus ditransfer.</p>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ================================================ panel hasil -->
+  <div class="tata tata--sempit sembunyi" id="panelHasil"></div>
+
+</main>
+
+<footer class="kaki">
+  <div class="kaki__dalam">
+    <div class="kaki__bawah" style="padding-top:0">
+      <span>© 2026 PGRI Kecamatan Tomini</span>
+      <span><a href="/" style="color:inherit">Beranda</a> · <a href="/cek" style="color:inherit">Cek pendaftaran</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/api.js"></script>
+<script src="/js/pendaftaran.js"></script>
+</body>
+</html>

@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fun Run PGRI Tomini 2026 — Lari 7 KM di Tepi Teluk Tomini</title>
+<meta name="description" content="Fun Run PGRI Tomini 2026. Lari santai 7 kilometer menyusuri pesisir Teluk Tomini, Selasa 24 November 2026. Pendaftaran dibuka 21 September sampai 10 Oktober 2026.">
+<meta name="theme-color" content="#0b3fd9">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Fun Run PGRI Tomini 2026">
+<meta property="og:description" content="Lari santai 7 KM menyusuri pesisir Teluk Tomini. Selasa, 24 November 2026.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="id_ID">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+<a class="lewati" href="#isi">Lompat ke isi utama</a>
+
+<!-- =================================================== rel kilometer -->
+<aside class="rel" aria-hidden="true" id="rel">
+  <div class="rel__jalur"></div>
+  <div class="rel__isi" id="relIsi"></div>
+  <div class="rel__pelari" id="relPelari"></div>
+  <div class="rel__baca"><b id="relAngka">0.0</b>KM / 7</div>
+</aside>
+
+<!-- ======================================================== navigasi -->
+<header class="nav">
+  <div class="nav__dalam">
+    <a class="nav__merek" href="/">
+      <img class="nav__logo" src="/assets/logo.svg" alt="" width="34" height="34">
+      <span class="nav__nama">Fun Run<span>PGRI Tomini</span></span>
+    </a>
+
+    <nav aria-label="Navigasi utama">
+      <ul class="nav__tautan" id="navTautan">
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#paket">Paket</a></li>
+        <li><a href="#rute">Rute</a></li>
+        <li><a href="#cara-daftar">Cara Daftar</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+        <li class="nav__hanya-hp"><a href="/cek">Cek Pendaftaran</a></li>
+        <li class="nav__hanya-hp"><a href="/pendaftaran">Daftar Sekarang</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav__aksi">
+      <a class="tbl tbl--terang tbl--kecil nav__cek" href="/cek">Cek pendaftaran</a>
+      <a class="tbl tbl--utama tbl--kecil" href="/pendaftaran" data-tombol-daftar>Daftar</a>
+      <button class="nav__togel" type="button" id="navTogel" aria-expanded="false" aria-controls="navTautan">
+        <span class="hanya-baca-layar">Buka menu</span>
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="nav__progres" aria-hidden="true">
+    <i id="progresPita"></i>
+    <span class="nav__km" id="progresKm">0.0 KM</span>
+  </div>
+</header>
+
+<main id="isi">
+
+<!-- ============================================================ hero -->
+<section class="hero butir">
+  <div class="hero__dalam">
+    <div class="hero__teks">
+      <p class="hero__mata mata">
+        <span>Selasa, 24 November 2026</span>
+        <i aria-hidden="true">/</i>
+        <span>Tomini, Parigi Moutong</span>
+        <i aria-hidden="true">/</i>
+        <span>Sulawesi Tengah</span>
+      </p>
+
+      <h1 class="hero__judul">
+        <span class="hero__baris hero__baris--kecil">Fun Run</span>
+        <span class="hero__baris hero__baris--besar">PGRI Tomini</span>
+        <span class="hero__baris hero__baris--rongga">2026</span>
+      </h1>
+
+      <p class="hero__slogan">Sehat bersama, solid berkarya, semarakkan Tomini.</p>
+
+      <div class="mundur" id="mundur" role="timer" aria-live="off">
+        <p class="mundur__judul">Mundur ke garis start</p>
+        <div class="mundur__kotak"><b class="mundur__angka" id="mundurHari">—</b><span class="mundur__label">Hari</span></div>
+        <div class="mundur__kotak"><b class="mundur__angka" id="mundurJam">—</b><span class="mundur__label">Jam</span></div>
+        <div class="mundur__kotak"><b class="mundur__angka" id="mundurMenit">—</b><span class="mundur__label">Menit</span></div>
+        <div class="mundur__kotak"><b class="mundur__angka" id="mundurDetik">—</b><span class="mundur__label">Detik</span></div>
+      </div>
+
+      <div class="hero__aksi">
+        <a class="tbl tbl--kuning" href="/pendaftaran" data-tombol-daftar>Daftar sekarang</a>
+        <a class="tbl tbl--terang" href="/cek">Cek pendaftaran</a>
+      </div>
+    </div>
+
+    <div class="hero__bib">
+      <div class="bib-kartu">
+        <span class="bib-kartu__lubang" aria-hidden="true"></span>
+        <span class="bib-kartu__lubang" aria-hidden="true"></span>
+        <span class="bib-kartu__lubang" aria-hidden="true"></span>
+        <span class="bib-kartu__lubang" aria-hidden="true"></span>
+
+        <p class="bib-kartu__acara">Fun Run <b>PGRI Tomini</b> 2026</p>
+
+        <p class="bib-kartu__jarak"><b>7</b><span>Kilometer</span></p>
+
+        <dl class="bib-kartu__kaki">
+          <div><dt>Hari</dt><dd>Selasa<br>24 Nov 2026</dd></div>
+          <div><dt>Titik kumpul</dt><dd>Tomini<br>Parigi Moutong</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================== teks berjalan -->
+<div class="teks-jalan" aria-hidden="true">
+  <div class="teks-jalan__jalur">
+    <span>Sehat bersama</span><span>Solid berkarya</span><span>Semarakkan Tomini</span>
+    <span>7 KM tepi laut</span><span>24 November 2026</span>
+  </div>
+  <div class="teks-jalan__jalur">
+    <span>Sehat bersama</span><span>Solid berkarya</span><span>Semarakkan Tomini</span>
+    <span>7 KM tepi laut</span><span>24 November 2026</span>
+  </div>
+</div>
+
+<!-- ==================================================== fakta ringkas -->
+<section class="band band--rapat" aria-label="Ringkasan acara">
+  <div class="band__dalam">
+    <div class="fakta naik">
+      <div class="fakta__sel">
+        <span class="fakta__label">Hari pelaksanaan</span>
+        <p class="fakta__nilai">Selasa<br>24 Nov 2026</p>
+        <p class="fakta__ket">Start pagi, rute ditutup sebelum siang.</p>
+      </div>
+      <div class="fakta__sel">
+        <span class="fakta__label">Titik kumpul</span>
+        <p class="fakta__nilai">Tomini</p>
+        <p class="fakta__ket">Kabupaten Parigi Moutong, Sulawesi Tengah.</p>
+      </div>
+      <div class="fakta__sel">
+        <span class="fakta__label">Jarak tempuh</span>
+        <p class="fakta__nilai">7 Kilometer</p>
+        <p class="fakta__ket">Satu kategori, boleh lari atau jalan cepat.</p>
+      </div>
+      <div class="fakta__sel">
+        <span class="fakta__label">Masa pendaftaran</span>
+        <p class="fakta__nilai" id="faktaPendaftaran">21 Sep — 10 Okt</p>
+        <p class="fakta__ket" id="faktaKuota">Kuota terbatas, tutup lebih awal kalau penuh.</p>
+      </div>
+    </div>
+
+    <div class="pesan pesan--ingat naik sembunyi" id="pengumuman" style="margin-top: var(--s-5)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 11v2h4v-2h-4zm-2.2 6.2 2.4 1.8 1.2-1.6-2.4-1.8-1.2 1.6zM20 4.6 17.6 6.4l1.2 1.6L21.2 6.2 20 4.6zM4 9c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h1v4h2v-4h1l5 3V6L8 9H4zm11.5 3c0-1.3-.6-2.5-1.5-3.2v6.4c.9-.7 1.5-1.9 1.5-3.2z"/></svg>
+      <p id="pengumumanTeks"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================== KM 1 — tentang -->
+<section class="band band--pasir" id="tentang" data-km="1">
+  <div class="band__dalam">
+    <div class="tentang">
+      <div class="tentang__teks naik">
+        <header class="kepala">
+          <span class="kepala__km">KM 1 <b class="data">Tentang</b></span>
+          <h2 class="kepala__judul">Tujuh kilometer di tepi <em>Teluk Tomini</em></h2>
+        </header>
+        <p>Fun Run PGRI Tomini 2026 adalah lari bersama yang digelar keluarga besar PGRI Kecamatan Tomini. Rutenya menyusuri jalan pesisir, dengan laut di satu sisi dan perbukitan di sisi lain sepanjang perjalanan.</p>
+        <p>Acaranya bukan lomba adu cepat semata. Tujuh kilometer ini boleh ditempuh dengan berlari, jogging santai, atau jalan cepat bersama teman — yang penting sampai garis finis. Guru, siswa, keluarga, dan warga umum sama-sama diundang.</p>
+        <p>Satu pagi untuk bergerak bersama, bertemu kolega dari sekolah lain, dan menunjukkan bahwa Tomini punya jalur lari yang pantas dibanggakan.</p>
+      </div>
+
+      <div class="tentang__angka naik">
+        <div class="angka">
+          <b class="angka__nilai">7 KM</b>
+          <span class="angka__label">Satu kategori</span>
+        </div>
+        <div class="angka">
+          <b class="angka__nilai">Umum</b>
+          <span class="angka__label">Terbuka untuk semua</span>
+        </div>
+        <div class="angka">
+          <b class="angka__nilai">2 Paket</b>
+          <span class="angka__label">Lengkap &amp; Hemat</span>
+        </div>
+        <div class="angka">
+          <b class="angka__nilai">4 Benefit</b>
+          <span class="angka__label">Dibawa pulang</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================== KM 2 — bawa pulang -->
+<section class="band band--laut butir" id="benefit" data-km="2">
+  <div class="band__dalam">
+    <header class="kepala naik">
+      <span class="kepala__km">KM 2 <b class="data">Benefit</b></span>
+      <h2 class="kepala__judul">Yang kamu bawa pulang</h2>
+      <p class="kepala__antar">Semua peserta yang menyelesaikan rute mendapat medali. Sisanya menyesuaikan paket yang kamu pilih.</p>
+    </header>
+
+    <div class="pulang">
+      <article class="pulang__item naik">
+        <span class="pulang__nomor data">01</span>
+        <div class="pulang__kepala">
+          <svg class="pulang__ikon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 8l6 4 6-4 10 5-3 9-4-1.5V40H15V20.5L11 22l-3-9 10-5z"/>
+          </svg>
+          <h3 class="pulang__judul">Jersey resmi</h3>
+        </div>
+        <p class="pulang__teks">Jersey Fun Run PGRI Tomini 2026, ukuran S sampai XXL. Khusus Paket Lengkap, selama persediaan ukuran masih ada.</p>
+      </article>
+
+      <article class="pulang__item naik">
+        <span class="pulang__nomor data">02</span>
+        <div class="pulang__kepala">
+          <svg class="pulang__ikon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" aria-hidden="true">
+            <path d="M16 6l4 14M32 6l-4 14"/><circle cx="24" cy="31" r="11"/><path d="M24 26l1.7 3.5 3.8.6-2.8 2.7.7 3.8-3.4-1.8-3.4 1.8.7-3.8-2.8-2.7 3.8-.6L24 26z"/>
+          </svg>
+          <h3 class="pulang__judul">Medali finisher</h3>
+        </div>
+        <p class="pulang__teks">Diserahkan di garis finis untuk setiap peserta yang menuntaskan 7 kilometer, tanpa memandang urutan datang.</p>
+      </article>
+
+      <article class="pulang__item naik">
+        <span class="pulang__nomor data">03</span>
+        <div class="pulang__kepala">
+          <svg class="pulang__ikon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" aria-hidden="true">
+            <rect x="5" y="13" width="38" height="22" rx="3"/><circle cx="24" cy="24" r="6"/><path d="M12 19v10M36 19v10"/>
+          </svg>
+          <h3 class="pulang__judul">Uang tunai juara</h3>
+        </div>
+        <p class="pulang__teks">Hadiah uang tunai untuk pelari tercepat. Rincian kategori dan nominalnya diumumkan panitia menjelang hari pelaksanaan.</p>
+      </article>
+
+      <article class="pulang__item naik">
+        <span class="pulang__nomor data">04</span>
+        <div class="pulang__kepala">
+          <svg class="pulang__ikon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" aria-hidden="true">
+            <rect x="6" y="18" width="36" height="24" rx="2"/><path d="M4 12h40v6H4zM24 12v30"/><path d="M24 12s-2-6-7-6-5 6 0 6M24 12s2-6 7-6 5 6 0 6"/>
+          </svg>
+          <h3 class="pulang__judul">Doorprize</h3>
+        </div>
+        <p class="pulang__teks">Undian berhadiah untuk semua peserta yang hadir dan melakukan daftar ulang di lokasi. Nomor BIB-mu adalah nomor undiannya.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================= KM 3 — paket -->
+<section class="band band--pasir" id="paket" data-km="3">
+  <div class="band__dalam">
+    <header class="kepala naik">
+      <span class="kepala__km">KM 3 <b class="data">Paket</b></span>
+      <h2 class="kepala__judul">Pilih paket, lalu <em>amankan tempatmu</em></h2>
+      <p class="kepala__antar">Bedanya cuma satu: jersey. Medali, refreshment, dan doorprize didapat semua peserta.</p>
+    </header>
+
+    <div class="paket" id="daftarPaket">
+      <article class="paket__kartu paket__kartu--sorot naik">
+        <span class="paket__pita">Paling diminati</span>
+        <h3 class="paket__nama">Paket Lengkap</h3>
+        <p class="paket__harga"><span data-harga="lengkap">Rp120.000</span> <small>/ peserta</small></p>
+        <ul class="paket__daftar">
+          <li>Jersey resmi Fun Run PGRI Tomini 2026</li>
+          <li>Nomor BIB peserta</li>
+          <li>Medali finisher</li>
+          <li>Refreshment di garis finis</li>
+          <li>Ikut undian doorprize</li>
+        </ul>
+        <div class="ukuran">
+          <p class="ukuran__judul">Ketersediaan ukuran hari ini</p>
+          <div class="ukuran__baris" id="ukuranTersedia">
+            <span class="ukuran__cip">Memuat…</span>
+          </div>
+          <p class="bidang__bantuan">Angka kecil menunjukkan sisa stok. Ukuran yang dicoret sudah habis.</p>
+        </div>
+      </article>
+
+      <article class="paket__kartu naik">
+        <h3 class="paket__nama">Paket Hemat</h3>
+        <p class="paket__harga"><span data-harga="hemat">Rp60.000</span> <small>/ peserta</small></p>
+        <ul class="paket__daftar">
+          <li>Nomor BIB peserta</li>
+          <li>Medali finisher</li>
+          <li>Refreshment di garis finis</li>
+          <li>Ikut undian doorprize</li>
+        </ul>
+        <p class="bidang__bantuan" style="margin-top:auto">Tanpa jersey. Cocok kalau kamu sudah punya kaus lari sendiri atau ingin ikut ramai-ramai satu sekolah.</p>
+      </article>
+    </div>
+
+    <p style="margin-top: var(--s-6)">
+      <a class="tbl tbl--utama" href="/pendaftaran" data-tombol-daftar>Ambil paket &amp; daftar</a>
+    </p>
+  </div>
+</section>
+
+<!-- ================================================== KM 4 — rute -->
+<section class="band band--pirus butir" id="rute" data-km="4">
+  <div class="band__dalam">
+    <header class="kepala naik">
+      <span class="kepala__km">KM 4 <b class="data">Rute</b></span>
+      <h2 class="kepala__judul">Satu putaran, tujuh penanda</h2>
+      <p class="kepala__antar">Jalur pesisir dengan permukaan aspal. Setiap kilometer ditandai papan, dan air minum tersedia di titik tengah.</p>
+    </header>
+
+    <div class="rute">
+      <div class="rute__gambar naik">
+        <svg viewBox="0 0 640 300" role="img" aria-label="Diagram rute 7 kilometer menyusuri pesisir, dari titik start ke garis finis.">
+          <title>Diagram rute 7 kilometer</title>
+          <!-- laut -->
+          <path d="M0 0h640v86c-70 26-140-16-212 6S286 122 196 96 62 56 0 78V0z" fill="#0b3fd9" opacity=".18"/>
+          <path d="M0 96c62-22 124 4 196 22s160-20 232-38 142 20 212-6" stroke="#0b3fd9" stroke-width="3" fill="none" opacity=".45" stroke-dasharray="10 8"/>
+          <!-- jalur lari -->
+          <path id="jalurRute" d="M54 232C120 232 132 150 196 150s80 66 148 66 88-88 156-88c34 0 56 14 86 14"
+                stroke="#0a1128" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <path d="M54 232C120 232 132 150 196 150s80 66 148 66 88-88 156-88c34 0 56 14 86 14"
+                stroke="#ffd400" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="2 14"/>
+          <!-- penanda kilometer -->
+          <g font-family="'Martian Mono', monospace" font-size="11" font-weight="700" text-anchor="middle">
+            <g fill="#0a1128">
+              <circle cx="128" cy="196" r="13" fill="#fff8ee" stroke="#0a1128" stroke-width="3"/><text x="128" y="200">1</text>
+              <circle cx="196" cy="150" r="13" fill="#fff8ee" stroke="#0a1128" stroke-width="3"/><text x="196" y="154">2</text>
+              <circle cx="268" cy="182" r="13" fill="#fff8ee" stroke="#0a1128" stroke-width="3"/><text x="268" y="186">3</text>
+              <circle cx="344" cy="216" r="13" fill="#ff2e4d" stroke="#0a1128" stroke-width="3"/><text x="344" y="220" fill="#fff8ee">4</text>
+              <circle cx="420" cy="176" r="13" fill="#fff8ee" stroke="#0a1128" stroke-width="3"/><text x="420" y="180">5</text>
+              <circle cx="500" cy="128" r="13" fill="#fff8ee" stroke="#0a1128" stroke-width="3"/><text x="500" y="132">6</text>
+              <circle cx="566" cy="134" r="13" fill="#fff8ee" stroke="#0a1128" stroke-width="3"/><text x="566" y="138">7</text>
+            </g>
+          </g>
+          <!-- titik air minum -->
+          <g transform="translate(344 216)">
+            <path d="M0 -40v18" stroke="#0a1128" stroke-width="3"/>
+            <rect x="-40" y="-60" width="80" height="20" rx="10" fill="#0a1128"/>
+            <text x="0" y="-46" font-family="'Martian Mono', monospace" font-size="9" font-weight="700" fill="#ffd400" text-anchor="middle">AIR MINUM</text>
+          </g>
+          <!-- start -->
+          <g transform="translate(54 232)">
+            <circle r="16" fill="#0a1128"/><circle r="6" fill="#ffd400"/>
+            <text y="42" font-family="'Big Shoulders Display', sans-serif" font-size="22" font-weight="900" fill="#0a1128" text-anchor="middle">START</text>
+          </g>
+          <!-- finis -->
+          <g transform="translate(586 246)">
+            <path d="M0 0v-64" stroke="#0a1128" stroke-width="4"/>
+            <path d="M2 -62h34v22H2z" fill="#0a1128"/>
+            <path d="M2 -62h8.5v7.3H2zM19 -62h8.5v7.3H19zM10.5 -54.7H19v7.3h-8.5zM27.5 -54.7H36v7.3h-8.5zM2 -47.4h8.5v7.3H2zM19 -47.4h8.5v7.3H19z" fill="#fff8ee"/>
+            <text y="28" font-family="'Big Shoulders Display', sans-serif" font-size="22" font-weight="900" fill="#0a1128" text-anchor="middle">FINIS</text>
+          </g>
+        </svg>
+        <p class="bidang__bantuan" style="margin-top: var(--s-4)">Gambaran jalur. Peta detail dan titik parkir dibagikan panitia lewat WhatsApp seminggu sebelum hari-H.</p>
+      </div>
+
+      <div class="rute__info naik">
+        <div class="rute__baris">
+          <span class="rute__ikon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
+          <div>
+            <p class="rute__label">Lokasi</p>
+            <p class="rute__nilai">Tomini, Kabupaten Parigi Moutong,<br>Sulawesi Tengah</p>
+          </div>
+        </div>
+        <div class="rute__baris">
+          <span class="rute__ikon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14v10z"/></svg></span>
+          <div>
+            <p class="rute__label">Waktu</p>
+            <p class="rute__nilai">Selasa, 24 November 2026<br>Start pukul 06.00 WITA</p>
+          </div>
+        </div>
+        <div class="rute__baris">
+          <span class="rute__ikon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 5.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM9.8 8.9 7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3A6.98 6.98 0 0 0 19 13v-2c-1.8 0-3.3-1-4.1-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5 0-.8.1L6 8.3V13h2V9.6l1.8-.7z"/></svg></span>
+          <div>
+            <p class="rute__label">Medan</p>
+            <p class="rute__nilai">Aspal pesisir, tanjakan landai<br>Cocok untuk pelari pemula</p>
+          </div>
+        </div>
+        <div class="rute__baris">
+          <span class="rute__ikon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 4.5 20.3l.7.7L12 18l6.8 3 .7-.7L12 2z"/></svg></span>
+          <div>
+            <p class="rute__label">Dukungan di jalur</p>
+            <p class="rute__nilai">Pos air minum di KM 4<br>Tim medis &amp; motor penyapu di sepanjang rute</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================== KM 5 — cara daftar -->
+<section class="band band--pasir" id="cara-daftar" data-km="5">
+  <div class="band__dalam">
+    <header class="kepala naik">
+      <span class="kepala__km">KM 5 <b class="data">Cara daftar</b></span>
+      <h2 class="kepala__judul">Empat langkah sampai garis start</h2>
+      <p class="kepala__antar">Tidak perlu datang ke sekretariat. Semua dikerjakan lewat situs ini.</p>
+    </header>
+
+    <ol class="langkah naik">
+      <li class="langkah__item">
+        <h3 class="langkah__judul">Isi data</h3>
+        <p class="langkah__teks">Lengkapi formulir pendaftaran, pilih paket dan ukuran jersey. Kamu langsung dapat nomor registrasi.</p>
+      </li>
+      <li class="langkah__item">
+        <h3 class="langkah__judul">Transfer</h3>
+        <p class="langkah__teks">Kirim biaya pendaftaran ke rekening BRI panitia sesuai nominal yang tertera di halaman setelah mendaftar.</p>
+      </li>
+      <li class="langkah__item">
+        <h3 class="langkah__judul">Unggah bukti</h3>
+        <p class="langkah__teks">Buka Cek Pendaftaran, masukkan nomor registrasi, lalu unggah foto atau PDF bukti transfer.</p>
+      </li>
+      <li class="langkah__item">
+        <h3 class="langkah__judul">Terima nomor BIB</h3>
+        <p class="langkah__teks">Setelah panitia memverifikasi, nomor BIB terbit dan kartu pesertamu bisa langsung diunduh.</p>
+      </li>
+    </ol>
+
+    <p style="margin-top: var(--s-6); display:flex; flex-wrap:wrap; gap: var(--s-4)">
+      <a class="tbl tbl--utama" href="/pendaftaran" data-tombol-daftar>Mulai isi formulir</a>
+      <a class="tbl tbl--hantu" href="/cek">Sudah daftar? Cek status</a>
+    </p>
+  </div>
+</section>
+
+<!-- ============================================ KM 6 — pembayaran -->
+<section class="band band--aspal butir" id="pembayaran" data-km="6">
+  <div class="band__dalam">
+    <header class="kepala naik">
+      <span class="kepala__km">KM 6 <b class="data">Pembayaran</b></span>
+      <h2 class="kepala__judul">Satu rekening, <em>satu-satunya</em></h2>
+      <p class="kepala__antar">Panitia hanya menerima pembayaran ke rekening di bawah ini. Kalau ada yang mengaku panitia dan memberi nomor rekening lain, jangan ditransfer — konfirmasi dulu ke kontak resmi.</p>
+    </header>
+
+    <div class="bayar">
+      <div class="rekening naik">
+        <p class="rekening__bank"><span>Bank BRI</span> <span>Rekening resmi panitia</span></p>
+        <b class="rekening__nomor" id="nomorRekening">036301026063507</b>
+        <p class="rekening__atas-nama">Atas nama <b>M. Izhar Il</b></p>
+        <button class="tbl tbl--kuning tbl--penuh salin" type="button" id="salinRekening" data-salin="036301026063507">
+          Salin nomor rekening
+        </button>
+        <p class="rekening__catatan">Transfer sesuai nominal yang muncul di halaman pendaftaranmu. Simpan struk atau tangkapan layarnya — itu yang kamu unggah di langkah berikutnya.</p>
+      </div>
+
+      <div class="naik">
+        <ol class="paket__daftar" style="gap: var(--s-4)">
+          <li>Transfer dari ATM, mobile banking, atau teller — semuanya diterima.</li>
+          <li>Pastikan nominalnya persis. Nominal yang tidak cocok memperlambat verifikasi.</li>
+          <li>Bukti transfer boleh berupa JPG, PNG, atau PDF, maksimal 5 MB.</li>
+          <li>Verifikasi dikerjakan manual oleh panitia, umumnya selesai dalam 1x24 jam pada hari kerja.</li>
+          <li>Status pendaftaran bisa kamu pantau kapan saja lewat halaman Cek Pendaftaran.</li>
+        </ol>
+        <p style="margin-top: var(--s-6)">
+          <a class="tbl tbl--terang" href="/cek">Unggah bukti pembayaran</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================== KM 7 — tanya jawab -->
+<section class="band band--kuning" id="tanya" data-km="7">
+  <div class="band__dalam">
+    <header class="kepala naik">
+      <span class="kepala__km">KM 7 <b class="data">Tanya jawab</b></span>
+      <h2 class="kepala__judul">Yang sering ditanyakan</h2>
+    </header>
+
+    <div class="tanya naik">
+      <details class="tanya__item">
+        <summary class="tanya__soal">Siapa saja yang boleh ikut?</summary>
+        <div class="tanya__jawab">
+          <p>Terbuka untuk umum. Guru dan tenaga kependidikan anggota PGRI, siswa, keluarga, maupun warga di luar lingkungan PGRI sama-sama boleh mendaftar. Peserta minimal berusia 10 tahun pada hari pelaksanaan; yang di bawah 17 tahun sebaiknya didampingi orang tua atau guru.</p>
+        </div>
+      </details>
+
+      <details class="tanya__item">
+        <summary class="tanya__soal">Apa beda Paket Lengkap dan Paket Hemat?</summary>
+        <div class="tanya__jawab">
+          <p>Hanya jersey. Paket Lengkap (Rp120.000) sudah termasuk jersey resmi; Paket Hemat (Rp60.000) tidak. Medali finisher, refreshment, nomor BIB, dan hak ikut doorprize didapat oleh kedua paket.</p>
+        </div>
+      </details>
+
+      <details class="tanya__item">
+        <summary class="tanya__soal">Bagaimana kalau ukuran jersey saya sudah habis?</summary>
+        <div class="tanya__jawab">
+          <p>Stok tiap ukuran ditampilkan langsung di halaman Paket dan di formulir pendaftaran. Kalau ukuranmu habis, pilih ukuran terdekat yang masih tersedia atau ambil Paket Hemat. Jersey dibuat dalam jumlah terbatas dan tidak ada penambahan di tengah masa pendaftaran.</p>
+        </div>
+      </details>
+
+      <details class="tanya__item">
+        <summary class="tanya__soal">Berapa lama pembayaran saya diverifikasi?</summary>
+        <div class="tanya__jawab">
+          <p>Umumnya dalam 1x24 jam pada hari kerja. Verifikasi dikerjakan manual oleh panitia dengan mencocokkan bukti transfer ke mutasi rekening. Kalau lewat dari itu statusmu belum berubah, hubungi kontak panitia di bawah.</p>
+        </div>
+      </details>
+
+      <details class="tanya__item">
+        <summary class="tanya__soal">Bisakah saya mendaftarkan beberapa orang sekaligus?</summary>
+        <div class="tanya__jawab">
+          <p>Bisa. Isi formulir satu per satu untuk tiap peserta — setiap orang butuh nomor registrasi dan nomor BIB sendiri. Satu nomor WhatsApp boleh dipakai untuk beberapa pendaftaran, misalnya saat satu guru mendaftarkan rombongan sekolah. Semua pendaftaran atas nomor itu akan muncul bersamaan di halaman Cek Pendaftaran.</p>
+        </div>
+      </details>
+
+      <details class="tanya__item">
+        <summary class="tanya__soal">Apa yang harus dibawa saat hari pelaksanaan?</summary>
+        <div class="tanya__jawab">
+          <p>Kartu peserta (dicetak atau ditunjukkan dari layar HP) untuk daftar ulang, pakaian dan sepatu lari yang nyaman, serta botol minum pribadi. Nomor BIB dan jersey diambil saat daftar ulang di lokasi.</p>
+        </div>
+      </details>
+
+      <details class="tanya__item">
+        <summary class="tanya__soal">Kalau saya berhalangan hadir, apakah biaya dikembalikan?</summary>
+        <div class="tanya__jawab">
+          <p>Biaya pendaftaran tidak dapat dikembalikan karena sudah dialokasikan untuk jersey, medali, dan logistik acara. Namun jerseymu tetap bisa diambil — titipkan pada rekan yang hadir dengan menunjukkan kartu pesertamu.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================== finis — kontak panitia -->
+<section class="band band--pasir" id="kontak" data-km="finis">
+  <div class="band__dalam">
+    <header class="kepala naik">
+      <span class="kepala__km">FINIS <b class="data">Kontak</b></span>
+      <h2 class="kepala__judul">Masih ragu? <em>Tanya panitia</em></h2>
+      <p class="kepala__antar">Dua nomor di bawah ini adalah kontak resmi. Jam balas: 08.00 – 21.00 WITA.</p>
+    </header>
+
+    <div class="kontak" id="daftarKontak">
+      <article class="kontak__kartu naik">
+        <div>
+          <p class="kontak__peran">Informasi &amp; pendaftaran</p>
+          <h3 class="kontak__nama">Munawir</h3>
+        </div>
+        <p class="kontak__nomor">0812 4374 0109</p>
+        <a class="tbl tbl--utama" href="https://wa.me/6281243740109?text=Halo%20panitia%20Fun%20Run%20PGRI%20Tomini%202026%2C%20saya%20mau%20bertanya%20soal%20pendaftaran." target="_blank" rel="noopener">Chat WhatsApp</a>
+      </article>
+
+      <article class="kontak__kartu naik">
+        <div>
+          <p class="kontak__peran">Informasi &amp; pendaftaran</p>
+          <h3 class="kontak__nama">Isfar</h3>
+        </div>
+        <p class="kontak__nomor">0823 4814 8054</p>
+        <a class="tbl tbl--utama" href="https://wa.me/6282348148054?text=Halo%20panitia%20Fun%20Run%20PGRI%20Tomini%202026%2C%20saya%20mau%20bertanya%20soal%20pendaftaran." target="_blank" rel="noopener">Chat WhatsApp</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ========================================================= kaki -->
+<footer class="kaki">
+  <div class="kaki__dalam">
+    <div class="kaki__atas">
+      <div>
+        <h2 class="kaki__judul">Fun Run<br><span>PGRI Tomini 2026</span></h2>
+        <p class="kaki__teks">Sehat bersama, solid berkarya, semarakkan Tomini.<br>Diselenggarakan oleh PGRI Kecamatan Tomini, Kabupaten Parigi Moutong, Sulawesi Tengah.</p>
+      </div>
+
+      <div>
+        <p class="kaki__kolom-judul">Halaman</p>
+        <ul class="kaki__daftar">
+          <li><a href="#tentang">Tentang acara</a></li>
+          <li><a href="#paket">Paket &amp; harga</a></li>
+          <li><a href="#rute">Rute 7 KM</a></li>
+          <li><a href="#tanya">Tanya jawab</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="kaki__kolom-judul">Pendaftaran</p>
+        <ul class="kaki__daftar">
+          <li><a href="/pendaftaran">Formulir pendaftaran</a></li>
+          <li><a href="/cek">Cek status &amp; unggah bukti</a></li>
+          <li><a href="#pembayaran">Rekening pembayaran</a></li>
+          <li><a href="/admin/login">Masuk panitia</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="kaki__bawah">
+      <span>© 2026 PGRI Kecamatan Tomini</span>
+      <span>Tomini · Parigi Moutong · Sulawesi Tengah</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-apung" href="https://wa.me/6281243740109?text=Halo%20panitia%20Fun%20Run%20PGRI%20Tomini%202026." target="_blank" rel="noopener">
+  <span class="hanya-baca-layar">Hubungi panitia lewat WhatsApp</span>
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.13c-.25.69-1.43 1.32-1.97 1.4-.53.08-1.19.11-1.92-.12-.44-.14-1.01-.33-1.74-.64-3.07-1.33-5.07-4.42-5.22-4.62-.15-.2-1.25-1.66-1.25-3.17s.79-2.25 1.07-2.56c.28-.31.61-.38.81-.38l.58.01c.19.01.44-.07.69.53.25.6.85 2.07.93 2.22.08.15.13.33.02.53-.1.2-.15.33-.3.5l-.45.53c-.15.15-.3.32-.13.62.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.36 1.46.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.73.82 2.03.97.3.15.5.22.57.35.08.12.08.72-.17 1.41z"/></svg>
+</a>
+
+<script src="/js/api.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>

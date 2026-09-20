@@ -1,0 +1,464 @@
+/* ==========================================================================
+   FUN RUN PGRI TOMINI 2026 — Token desain
+   Arah: poster risograph balapan. Blok warna rata, bayangan keras,
+   tipografi kondensat, tekstur butiran cetak.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500..900&family=Martian+Mono:wght@400..700&family=Plus+Jakarta+Sans:ital,wght@0,400..800;1,400..600&display=swap');
+
+:root {
+  /* --- Warna ------------------------------------------------------------ */
+  --laut: #0b3fd9;        /* ultramarin listrik — laut dalam Teluk Tomini */
+  --laut-tua: #06228f;
+  --dangkal: #00d4e6;     /* pirus air dangkal */
+  --bara: #ff2e4d;        /* merah PGRI, didorong ke koral panas */
+  --bara-tua: #d40f2c;
+  --mentari: #ffd400;     /* kuning matahari khatulistiwa */
+  --pasir: #fff8ee;       /* putih hangat pasir pantai */
+  --aspal: #0a1128;       /* tinta */
+  --kabut: #e6ddd0;
+
+  /* --- Peran ------------------------------------------------------------ */
+  --bg: var(--pasir);
+  --ink: var(--aspal);
+  --ink-lembut: #4a5468;
+  --garis: var(--aspal);
+
+  /* --- Huruf ------------------------------------------------------------ */
+  --teriak: 'Big Shoulders Display', 'Arial Narrow', sans-serif;
+  --badan: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --data: 'Martian Mono', ui-monospace, 'Cascadia Mono', monospace;
+
+  --t--2: 0.6875rem;
+  --t--1: 0.8125rem;
+  --t-0: 1rem;
+  --t-1: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  --t-2: clamp(1.25rem, 1.1rem + 0.8vw, 1.75rem);
+  --t-3: clamp(1.625rem, 1.3rem + 1.6vw, 2.5rem);
+  --t-4: clamp(2.25rem, 1.6rem + 3.2vw, 4rem);
+  --t-5: clamp(3rem, 1.5rem + 7vw, 6.5rem);
+  --t-6: clamp(3.75rem, 0.5rem + 15vw, 11rem);
+
+  /* --- Jarak ------------------------------------------------------------ */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4rem;
+  --s-9: 6rem;
+
+  --lebar: 76rem;
+  --lebar-sempit: 46rem;
+  --pinggir: clamp(1.25rem, 5vw, 4rem);
+
+  /* --- Bentuk ----------------------------------------------------------- */
+  --garis-tebal: 3px;
+  --sudut: 4px;
+  --sudut-besar: 14px;
+  --angkat: 7px 7px 0 var(--aspal);
+  --angkat-kecil: 4px 4px 0 var(--aspal);
+  --angkat-terang: 7px 7px 0 var(--pasir);
+
+  --rail: 4.5rem; /* lebar rel kilometer di layar lebar */
+}
+
+/* ==========================================================================
+   Dasar
+   ========================================================================== */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--badan);
+  font-size: var(--t-0);
+  line-height: 1.6;
+  font-synthesis-weight: none;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img, svg, video { display: block; max-width: 100%; }
+button, input, select, textarea { font: inherit; color: inherit; }
+
+h1, h2, h3, h4 {
+  margin: 0;
+  font-family: var(--teriak);
+  font-weight: 900;
+  line-height: 0.86;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+p { margin: 0 0 var(--s-4); text-wrap: pretty; }
+p:last-child { margin-bottom: 0; }
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 3px solid var(--mentari);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection { background: var(--mentari); color: var(--aspal); }
+
+/* ==========================================================================
+   Tekstur cetak — butiran halus supaya blok warna tidak terasa digital
+   ========================================================================== */
+
+.butir::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.16;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ==========================================================================
+   Primitif teks
+   ========================================================================== */
+
+.mata {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-family: var(--data);
+  font-size: var(--t--2);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.data { font-family: var(--data); font-variant-numeric: tabular-nums; }
+
+.sorot { color: var(--bara); }
+.sorot-kuning { color: var(--mentari); }
+
+.garis-bawah {
+  background-image: linear-gradient(var(--mentari), var(--mentari));
+  background-size: 100% 0.32em;
+  background-position: 0 88%;
+  background-repeat: no-repeat;
+}
+
+/* Huruf berongga — dipakai sekali di hero untuk kata "2026" */
+.rongga {
+  color: transparent;
+  -webkit-text-stroke: 2px currentColor;
+  paint-order: stroke fill;
+}
+
+/* ==========================================================================
+   Tombol
+   ========================================================================== */
+
+.tbl {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  padding: 0.85rem 1.6rem;
+  border: var(--garis-tebal) solid var(--aspal);
+  border-radius: 999px;
+  background: var(--pasir);
+  color: var(--aspal);
+  font-family: var(--teriak);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: var(--angkat-kecil);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
+}
+
+.tbl:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--aspal); }
+.tbl:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--aspal); }
+.tbl[disabled],
+.tbl[aria-disabled='true'] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: var(--angkat-kecil);
+}
+
+.tbl--utama { background: var(--bara); color: var(--pasir); }
+.tbl--kuning { background: var(--mentari); color: var(--aspal); }
+.tbl--laut { background: var(--laut); color: var(--pasir); }
+.tbl--wa { background: #25d366; color: var(--aspal); }
+.tbl--hantu { background: transparent; }
+.tbl--terang { border-color: var(--pasir); color: var(--pasir); background: transparent; box-shadow: var(--angkat-terang); }
+.tbl--terang:hover { box-shadow: 6px 6px 0 var(--pasir); }
+.tbl--kecil { padding: 0.5rem 1rem; font-size: 1rem; box-shadow: 3px 3px 0 var(--aspal); }
+.tbl--penuh { width: 100%; }
+
+/* ==========================================================================
+   Label & lencana
+   ========================================================================== */
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.3rem 0.7rem;
+  border: 2px solid var(--aspal);
+  border-radius: 999px;
+  background: var(--pasir);
+  font-family: var(--data);
+  font-size: var(--t--2);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.label--merah { background: var(--bara); color: var(--pasir); }
+.label--kuning { background: var(--mentari); }
+.label--laut { background: var(--laut); color: var(--pasir); }
+.label--pirus { background: var(--dangkal); }
+.label--redup { background: transparent; border-color: currentColor; opacity: 0.8; }
+
+/* Stiker miring — aksen, bukan hiasan massal. Dipakai terbatas. */
+.stiker {
+  display: inline-block;
+  padding: 0.5rem 1.1rem;
+  border: var(--garis-tebal) solid var(--aspal);
+  border-radius: 999px;
+  background: var(--mentari);
+  font-family: var(--teriak);
+  font-weight: 900;
+  text-transform: uppercase;
+  box-shadow: var(--angkat-kecil);
+  transform: rotate(-4deg);
+}
+
+/* ==========================================================================
+   Kartu
+   ========================================================================== */
+
+.kartu {
+  position: relative;
+  padding: var(--s-5);
+  border: var(--garis-tebal) solid var(--aspal);
+  border-radius: var(--sudut-besar);
+  background: var(--pasir);
+  box-shadow: var(--angkat);
+}
+
+.kartu--rata { box-shadow: none; }
+.kartu--laut { background: var(--laut); color: var(--pasir); }
+.kartu--kuning { background: var(--mentari); }
+.kartu--pirus { background: var(--dangkal); }
+
+/* ==========================================================================
+   Formulir
+   ========================================================================== */
+
+.bidang { display: block; margin-bottom: var(--s-5); }
+
+.bidang__label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-family: var(--data);
+  font-size: var(--t--2);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.bidang__bantuan {
+  margin: 0.35rem 0 0;
+  font-size: var(--t--1);
+  line-height: 1.45;
+  color: var(--ink-lembut);
+}
+
+.bidang__galat {
+  display: none;
+  margin: 0.4rem 0 0;
+  padding-left: 1.3rem;
+  font-size: var(--t--1);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--bara-tua);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d40f2c'%3E%3Cpath d='M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-7h-2v5h2V9z'/%3E%3C/svg%3E") no-repeat 0 0.15em / 1em 1em;
+}
+
+.bidang[data-galat] .bidang__galat { display: block; }
+.bidang[data-galat] .isian { border-color: var(--bara-tua); background: #fff1f3; }
+
+.isian {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 2px solid var(--aspal);
+  border-radius: var(--sudut);
+  background: #fff;
+  font-size: var(--t-0);
+  line-height: 1.4;
+  transition: border-color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.isian:focus {
+  outline: none;
+  border-color: var(--laut);
+  box-shadow: 0 0 0 3px rgba(11, 63, 217, 0.18);
+}
+
+.isian::placeholder { color: #9aa3b5; }
+textarea.isian { min-height: 6rem; resize: vertical; }
+
+select.isian {
+  appearance: none;
+  padding-right: 2.4rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230a1128'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.6rem center;
+  background-size: 1.4em;
+}
+
+/* Pilihan berbentuk kartu (paket, ukuran, jenis kelamin) */
+.pilihan { display: grid; gap: var(--s-3); }
+.pilihan--baris { grid-auto-flow: column; grid-auto-columns: 1fr; }
+.pilihan--ukuran { grid-template-columns: repeat(auto-fit, minmax(4.2rem, 1fr)); }
+
+.pilihan__item { position: relative; display: block; cursor: pointer; }
+.pilihan__item input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  margin: 0;
+}
+
+.pilihan__isi {
+  display: block;
+  padding: 0.7rem 0.9rem;
+  border: 2px solid var(--aspal);
+  border-radius: var(--sudut);
+  background: #fff;
+  text-align: center;
+  font-weight: 700;
+  transition: background-color 0.12s ease, color 0.12s ease, transform 0.12s ease;
+}
+
+.pilihan__item input:checked + .pilihan__isi {
+  background: var(--aspal);
+  color: var(--pasir);
+}
+
+.pilihan__item input:focus-visible + .pilihan__isi {
+  outline: 3px solid var(--mentari);
+  outline-offset: 2px;
+}
+
+.pilihan__item input:disabled + .pilihan__isi {
+  opacity: 0.4;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+.pilihan__item input:disabled { cursor: not-allowed; }
+
+/* Kotak centang persetujuan */
+.centang {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--s-3);
+  align-items: start;
+  font-size: var(--t--1);
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.centang input {
+  width: 1.4rem;
+  height: 1.4rem;
+  margin: 0.1rem 0 0;
+  accent-color: var(--bara);
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Notifikasi
+   ========================================================================== */
+
+.pesan {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--s-3);
+  align-items: start;
+  padding: var(--s-4);
+  border: 2px solid var(--aspal);
+  border-radius: var(--sudut);
+  font-size: var(--t--1);
+  line-height: 1.5;
+}
+
+.pesan--galat { background: #ffe8ec; border-color: var(--bara-tua); }
+.pesan--sukses { background: #e4fbef; border-color: #0a7a44; }
+.pesan--info { background: #e8f0ff; border-color: var(--laut); }
+.pesan--ingat { background: var(--mentari); }
+.pesan__judul { font-weight: 800; }
+
+/* ==========================================================================
+   Pembantu
+   ========================================================================== */
+
+.lewati {
+  position: absolute;
+  left: -9999px;
+  z-index: 200;
+  padding: var(--s-3) var(--s-4);
+  background: var(--mentari);
+  border: var(--garis-tebal) solid var(--aspal);
+  font-weight: 800;
+}
+.lewati:focus { left: var(--s-4); top: var(--s-4); }
+
+.hanya-baca-layar {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.sembunyi { display: none !important; }
+
+.pembatas {
+  height: var(--garis-tebal);
+  margin: var(--s-6) 0;
+  border: 0;
+  background: var(--aspal);
+  opacity: 0.15;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

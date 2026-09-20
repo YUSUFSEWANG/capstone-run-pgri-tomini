@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Peserta — Panitia Fun Run PGRI Tomini 2026</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="adm">
+
+<header class="adm-atas">
+  <div class="adm-atas__dalam">
+    <a class="adm-atas__merek" href="/admin">
+      <img src="/assets/logo.svg" alt="" width="28" height="28">
+      <span class="adm-atas__nama">Panitia<span>Fun Run PGRI Tomini</span></span>
+    </a>
+    <ul class="adm-atas__nav">
+      <li><a href="/admin">Dasbor</a></li>
+      <li><a href="/admin/peserta">Peserta</a></li>
+      <li><a href="/admin/pengaturan">Pengaturan</a></li>
+      <li><a href="/" target="_blank" rel="noopener">Lihat situs</a></li>
+    </ul>
+    <div class="adm-atas__aku">
+      <span id="akuNama"></span>
+      <button class="adm-keluar" type="button" id="tombolKeluar">Keluar</button>
+    </div>
+  </div>
+</header>
+
+<main class="adm-isi">
+  <div class="adm-judul">
+    <div>
+      <h1>Peserta</h1>
+      <p id="ringkasJumlah">Memuat…</p>
+    </div>
+    <div class="adm-judul__aksi">
+      <a class="tbl tbl--kecil" href="/api/admin/export/peserta">Unduh CSV</a>
+    </div>
+  </div>
+
+  <form class="saring" id="formSaring">
+    <div>
+      <label class="saring__label" for="cariNama">Cari</label>
+      <input class="isian" type="search" id="cariNama" name="search" placeholder="Nama, no. registrasi, no. HP, BIB, instansi">
+    </div>
+    <div>
+      <label class="saring__label" for="saringStatus">Status</label>
+      <select class="isian" id="saringStatus" name="status">
+        <option value="">Semua status</option>
+        <option value="pending">Belum bayar</option>
+        <option value="review">Menunggu verifikasi</option>
+        <option value="verified">Terverifikasi</option>
+        <option value="rejected">Bukti ditolak</option>
+      </select>
+    </div>
+    <div>
+      <label class="saring__label" for="saringPaket">Paket</label>
+      <select class="isian" id="saringPaket" name="package">
+        <option value="">Semua paket</option>
+        <option value="lengkap">Lengkap</option>
+        <option value="hemat">Hemat</option>
+      </select>
+    </div>
+    <div>
+      <label class="saring__label" for="saringUrut">Urutan</label>
+      <select class="isian" id="saringUrut" name="sort">
+        <option value="created_desc">Terbaru dulu</option>
+        <option value="created_asc">Terlama dulu</option>
+        <option value="name_asc">Nama A–Z</option>
+        <option value="name_desc">Nama Z–A</option>
+        <option value="bib_asc">Nomor BIB</option>
+      </select>
+    </div>
+    <button class="tbl tbl--kecil" type="button" id="resetSaring">Reset</button>
+  </form>
+
+  <div class="tabel-bungkus">
+    <table class="tabel">
+      <thead>
+        <tr>
+          <th scope="col">Peserta</th>
+          <th scope="col">Paket</th>
+          <th scope="col">Jersey</th>
+          <th scope="col">Nominal</th>
+          <th scope="col">Status</th>
+          <th scope="col">BIB</th>
+          <th scope="col">Daftar</th>
+        </tr>
+      </thead>
+      <tbody id="isiTabel">
+        <tr><td colspan="7" style="text-align:center;padding:var(--s-7)"><span class="memuat"></span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="halaman">
+    <span id="infoHalaman"></span>
+    <div class="halaman__tombol">
+      <button class="tbl tbl--kecil" type="button" id="halamanSebelum">Sebelumnya</button>
+      <button class="tbl tbl--kecil" type="button" id="halamanSesudah">Berikutnya</button>
+    </div>
+  </div>
+</main>
+
+<!-- ======================================================= laci rincian -->
+<div class="laci-tirai" id="laciTirai"></div>
+<aside class="laci" id="laci" role="dialog" aria-modal="true" aria-labelledby="laciReg" hidden>
+  <header class="laci__kepala">
+    <span class="laci__reg" id="laciReg"></span>
+    <button class="laci__tutup" type="button" id="laciTutup" aria-label="Tutup rincian">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/></svg>
+    </button>
+  </header>
+  <div class="laci__badan" id="laciBadan"></div>
+  <footer class="laci__kaki" id="laciKaki"></footer>
+</aside>
+
+<script src="/js/api.js"></script>
+<script src="/js/admin-inti.js"></script>
+<script src="/js/admin-peserta.js"></script>
+</body>
+</html>

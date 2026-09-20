@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cek Pendaftaran — Fun Run PGRI Tomini 2026</title>
+<meta name="description" content="Cek status pendaftaran Fun Run PGRI Tomini 2026, unggah bukti pembayaran, dan unduh kartu peserta.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0b3fd9">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/halaman.css">
+</head>
+<body>
+
+<a class="lewati" href="#isi">Lompat ke pencarian</a>
+
+<header class="nav">
+  <div class="nav__dalam">
+    <a class="nav__merek" href="/">
+      <img class="nav__logo" src="/assets/logo.svg" alt="" width="34" height="34">
+      <span class="nav__nama">Fun Run<span>PGRI Tomini</span></span>
+    </a>
+    <div class="nav__aksi">
+      <a class="tbl tbl--utama tbl--kecil" href="/pendaftaran">Daftar</a>
+    </div>
+  </div>
+</header>
+
+<section class="puncak butir">
+  <div class="puncak__dalam">
+    <p class="puncak__remah"><a href="/">Beranda</a> <span aria-hidden="true">/</span> <span>Cek pendaftaran</span></p>
+    <h1 class="puncak__judul">Cek status &amp; <em>unggah bukti</em></h1>
+    <p class="puncak__antar">Masukkan nomor registrasi atau nomor WhatsApp yang kamu pakai saat mendaftar. Semua pendaftaran atas nomor itu akan ditampilkan.</p>
+  </div>
+</section>
+
+<main class="isi-halaman" id="isi">
+  <div class="tata tata--sempit">
+    <div>
+      <form class="gugus" id="formCek" novalidate style="margin-bottom:var(--s-6)">
+        <label class="bidang" data-bidang="q" style="margin-bottom:var(--s-4)">
+          <span class="bidang__label">Nomor registrasi atau nomor WhatsApp</span>
+          <input class="isian" type="text" name="q" id="isianCari" maxlength="40" required
+                 placeholder="FRPT-2026-0001  atau  0812 3456 7890" autocomplete="off">
+          <p class="bidang__galat"></p>
+        </label>
+        <button class="tbl tbl--utama tbl--penuh" type="submit" id="tombolCari">Cari pendaftaran</button>
+      </form>
+
+      <div class="pesan sembunyi" id="kotakPesan" role="status" aria-live="polite"></div>
+
+      <div id="hasilCek" aria-live="polite"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="kaki">
+  <div class="kaki__dalam">
+    <div class="kaki__bawah" style="padding-top:0">
+      <span>© 2026 PGRI Kecamatan Tomini</span>
+      <span><a href="/" style="color:inherit">Beranda</a> · <a href="https://wa.me/6281243740109" style="color:inherit" target="_blank" rel="noopener">Tanya panitia</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/api.js"></script>
+<script src="/js/cek.js"></script>
+</body>
+</html>

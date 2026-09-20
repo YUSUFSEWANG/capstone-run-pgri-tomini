@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dasbor Panitia — Fun Run PGRI Tomini 2026</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="adm">
+
+<header class="adm-atas">
+  <div class="adm-atas__dalam">
+    <a class="adm-atas__merek" href="/admin">
+      <img src="/assets/logo.svg" alt="" width="28" height="28">
+      <span class="adm-atas__nama">Panitia<span>Fun Run PGRI Tomini</span></span>
+    </a>
+    <ul class="adm-atas__nav">
+      <li><a href="/admin">Dasbor</a></li>
+      <li><a href="/admin/peserta">Peserta</a></li>
+      <li><a href="/admin/pengaturan">Pengaturan</a></li>
+      <li><a href="/" target="_blank" rel="noopener">Lihat situs</a></li>
+    </ul>
+    <div class="adm-atas__aku">
+      <span id="akuNama"></span>
+      <button class="adm-keluar" type="button" id="tombolKeluar">Keluar</button>
+    </div>
+  </div>
+</header>
+
+<main class="adm-isi">
+  <div class="adm-judul">
+    <div>
+      <h1>Dasbor</h1>
+      <p id="ringkasAcara">Memuat data…</p>
+    </div>
+    <div class="adm-judul__aksi">
+      <a class="tbl tbl--utama tbl--kecil" href="/admin/peserta?status=review">Periksa bukti masuk</a>
+    </div>
+  </div>
+
+  <div class="pesan pesan--ingat sembunyi" id="kotakStatus" style="margin-bottom:var(--s-5)"></div>
+
+  <section class="statistik" id="kartuAngka" aria-label="Ringkasan angka"></section>
+
+  <div class="adm-kisi adm-kisi--2">
+    <div>
+      <section class="panel">
+        <h2 class="panel__judul">Pendaftaran per hari <span id="totalHarian"></span></h2>
+        <div class="harian" id="grafikHarian"></div>
+        <div class="harian__kaki" id="grafikHarianKaki"></div>
+      </section>
+
+      <section class="panel">
+        <h2 class="panel__judul">Rekap ukuran jersey <span>Terpesan / kuota</span></h2>
+        <div class="batang" id="batangJersey"></div>
+        <p class="bidang__bantuan" style="margin-top:var(--s-4)">Angka "terpesan" mencakup peserta yang belum melunasi. Pakai ekspor rekap jersey untuk data yang dibawa ke vendor.</p>
+      </section>
+
+      <section class="panel">
+        <h2 class="panel__judul">Asal instansi terbanyak</h2>
+        <div class="batang" id="batangInstansi"></div>
+      </section>
+    </div>
+
+    <div>
+      <section class="panel">
+        <h2 class="panel__judul">Unduh rekap</h2>
+        <div style="display:grid;gap:var(--s-3)">
+          <a class="tbl tbl--kecil tbl--penuh" href="/api/admin/export/peserta">Semua peserta (CSV)</a>
+          <a class="tbl tbl--kecil tbl--penuh" href="/api/admin/export/daftar-hadir">Daftar hadir hari-H (CSV)</a>
+          <a class="tbl tbl--kecil tbl--penuh" href="/api/admin/export/jersey">Rekap ukuran jersey (CSV)</a>
+          <a class="tbl tbl--kecil tbl--penuh" href="/api/admin/export/keuangan">Rekap keuangan (CSV)</a>
+        </div>
+        <p class="bidang__bantuan" style="margin-top:var(--s-4)">Berkas CSV terbuka langsung di Excel maupun Google Sheets.</p>
+      </section>
+
+      <section class="panel">
+        <h2 class="panel__judul">Komposisi peserta</h2>
+        <div class="batang" id="batangKomposisi"></div>
+      </section>
+
+      <section class="panel">
+        <h2 class="panel__judul">Aktivitas terakhir</h2>
+        <ul class="jejak" id="daftarJejak"></ul>
+      </section>
+    </div>
+  </div>
+</main>
+
+<script src="/js/api.js"></script>
+<script src="/js/admin-inti.js"></script>
+<script src="/js/admin-dasbor.js"></script>
+</body>
+</html>

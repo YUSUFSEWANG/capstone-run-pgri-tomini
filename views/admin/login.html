@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Masuk Panitia — Fun Run PGRI Tomini 2026</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0b3fd9">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+
+<main class="masuk butir">
+  <div class="masuk__kotak">
+    <div class="masuk__merek">
+      <img src="/assets/logo.svg" alt="" width="36" height="36">
+      <span class="masuk__nama">Fun Run<span>PGRI Tomini 2026</span></span>
+    </div>
+
+    <h1 class="masuk__judul">Masuk panitia</h1>
+    <p class="masuk__ket">Halaman ini untuk pengurus yang memverifikasi pembayaran peserta.</p>
+
+    <div class="pesan sembunyi" id="kotakPesan" role="alert" aria-live="assertive"></div>
+
+    <form id="formMasuk" novalidate>
+      <label class="bidang" data-bidang="username">
+        <span class="bidang__label">Username</span>
+        <input class="isian" type="text" name="username" autocomplete="username" required autofocus maxlength="40">
+        <p class="bidang__galat"></p>
+      </label>
+
+      <label class="bidang" data-bidang="password">
+        <span class="bidang__label">Password</span>
+        <input class="isian" type="password" name="password" autocomplete="current-password" required maxlength="200">
+        <p class="bidang__galat"></p>
+      </label>
+
+      <button class="tbl tbl--utama tbl--penuh" type="submit" id="tombolMasuk">Masuk</button>
+    </form>
+
+    <p class="masuk__kaki"><a href="/">Kembali ke situs acara</a></p>
+  </div>
+</main>
+
+<script src="/js/api.js"></script>
+<script src="/js/admin-masuk.js"></script>
+</body>
+</html>

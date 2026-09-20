@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pengaturan — Panitia Fun Run PGRI Tomini 2026</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="adm">
+
+<header class="adm-atas">
+  <div class="adm-atas__dalam">
+    <a class="adm-atas__merek" href="/admin">
+      <img src="/assets/logo.svg" alt="" width="28" height="28">
+      <span class="adm-atas__nama">Panitia<span>Fun Run PGRI Tomini</span></span>
+    </a>
+    <ul class="adm-atas__nav">
+      <li><a href="/admin">Dasbor</a></li>
+      <li><a href="/admin/peserta">Peserta</a></li>
+      <li><a href="/admin/pengaturan">Pengaturan</a></li>
+      <li><a href="/" target="_blank" rel="noopener">Lihat situs</a></li>
+    </ul>
+    <div class="adm-atas__aku">
+      <span id="akuNama"></span>
+      <button class="adm-keluar" type="button" id="tombolKeluar">Keluar</button>
+    </div>
+  </div>
+</header>
+
+<main class="adm-isi">
+  <div class="adm-judul">
+    <div>
+      <h1>Pengaturan</h1>
+      <p>Perubahan di halaman ini langsung terlihat oleh calon peserta.</p>
+    </div>
+  </div>
+
+  <div class="pesan sembunyi" id="kotakKeadaan" style="margin-bottom:var(--s-5)"></div>
+
+  <div class="setelan">
+
+    <!-- ------------------------------------------------- pendaftaran -->
+    <section class="panel">
+      <h2 class="panel__judul">Masa pendaftaran</h2>
+
+      <form id="formSetelan" novalidate>
+        <div class="bidang" data-bidang="registration_open">
+          <span class="bidang__label">Saklar pendaftaran</span>
+          <div class="pilihan">
+            <label class="pilihan__item">
+              <input type="radio" name="registration_open" value="auto">
+              <span class="pilihan__isi">Ikut jadwal</span>
+            </label>
+            <label class="pilihan__item">
+              <input type="radio" name="registration_open" value="open">
+              <span class="pilihan__isi">Paksa buka</span>
+            </label>
+            <label class="pilihan__item">
+              <input type="radio" name="registration_open" value="closed">
+              <span class="pilihan__isi">Paksa tutup</span>
+            </label>
+          </div>
+          <p class="bidang__bantuan">"Ikut jadwal" membuka dan menutup formulir otomatis sesuai tanggal di bawah. Kuota penuh selalu menutup pendaftaran, apa pun pilihan ini.</p>
+          <p class="bidang__galat"></p>
+        </div>
+
+        <div class="pasangan">
+          <label class="bidang" data-bidang="registration_start">
+            <span class="bidang__label">Buka tanggal</span>
+            <input class="isian" type="date" name="registration_start">
+            <p class="bidang__galat"></p>
+          </label>
+          <label class="bidang" data-bidang="registration_end">
+            <span class="bidang__label">Tutup tanggal</span>
+            <input class="isian" type="date" name="registration_end">
+            <p class="bidang__galat"></p>
+          </label>
+        </div>
+
+        <label class="bidang" data-bidang="quota_total">
+          <span class="bidang__label">Kuota peserta</span>
+          <input class="isian" type="number" name="quota_total" min="0" max="100000" style="max-width:10rem">
+          <p class="bidang__bantuan">Isi 0 kalau tidak ingin membatasi jumlah peserta.</p>
+          <p class="bidang__galat"></p>
+        </label>
+
+        <div class="pasangan">
+          <label class="bidang" data-bidang="price_lengkap">
+            <span class="bidang__label">Harga Paket Lengkap</span>
+            <input class="isian" type="number" name="price_lengkap" min="0" step="1000">
+            <p class="bidang__galat"></p>
+          </label>
+          <label class="bidang" data-bidang="price_hemat">
+            <span class="bidang__label">Harga Paket Hemat</span>
+            <input class="isian" type="number" name="price_hemat" min="0" step="1000">
+            <p class="bidang__galat"></p>
+          </label>
+        </div>
+
+        <div class="bidang" data-bidang="unique_code_enabled">
+          <label class="centang">
+            <input type="checkbox" name="unique_code_enabled" value="true">
+            <span><b>Tambahkan kode unik pada nominal transfer.</b><br>
+              Setiap peserta dapat 3 angka tambahan (mis. Rp120.137) supaya mutasi rekening mudah dicocokkan. Nyalakan sebelum pendaftaran dibuka — peserta yang sudah terdaftar tidak ikut berubah.</span>
+          </label>
+          <p class="bidang__galat"></p>
+        </div>
+
+        <label class="bidang" data-bidang="announcement">
+          <span class="bidang__label">Pengumuman di beranda</span>
+          <textarea class="isian" name="announcement" rows="3" maxlength="300"
+                    placeholder="Contoh: Pengambilan jersey dibuka mulai 20 November di Sekretariat PGRI Tomini."></textarea>
+          <p class="bidang__bantuan">Kosongkan untuk menyembunyikan kotak pengumuman. Maksimal 300 karakter.</p>
+          <p class="bidang__galat"></p>
+        </label>
+
+        <label class="bidang" data-bidang="whatsapp_group_url">
+          <span class="bidang__label">Tautan grup WhatsApp peserta</span>
+          <input class="isian" type="url" name="whatsapp_group_url" maxlength="300"
+                 placeholder="https://chat.whatsapp.com/XXXXXXXXXXXXXXX">
+          <p class="bidang__bantuan">Buka grup di HP &rarr; ketuk nama grup &rarr; <b>Undang lewat tautan</b> &rarr; Salin tautan. Ajakan bergabung muncul di halaman selesai daftar, dan otomatis menyembul bagi peserta yang pembayarannya sudah diverifikasi. Kosongkan untuk menyembunyikan ajakan ini.</p>
+          <p class="bidang__galat"></p>
+        </label>
+
+        <button class="tbl tbl--utama" type="submit" id="tombolSimpan">Simpan pengaturan</button>
+      </form>
+    </section>
+
+    <div>
+      <!-- ------------------------------------------------ stok jersey -->
+      <section class="panel">
+        <h2 class="panel__judul">Kuota jersey <span>per ukuran</span></h2>
+        <form id="formJersey" novalidate>
+          <div id="daftarKuota"></div>
+          <p class="bidang__bantuan" style="margin:var(--s-4) 0">Kuota tidak bisa diturunkan di bawah jumlah yang sudah dipesan peserta. Ubah angka ini setelah jumlah order ke vendor ditetapkan.</p>
+          <button class="tbl tbl--kecil tbl--kuning" type="submit" id="tombolJersey">Simpan kuota jersey</button>
+        </form>
+      </section>
+
+      <!-- --------------------------------------------------- password -->
+      <section class="panel">
+        <h2 class="panel__judul">Ganti password</h2>
+        <form id="formPassword" novalidate>
+          <label class="bidang" data-bidang="current_password">
+            <span class="bidang__label">Password sekarang</span>
+            <input class="isian" type="password" name="current_password" autocomplete="current-password" required>
+            <p class="bidang__galat"></p>
+          </label>
+          <label class="bidang" data-bidang="new_password">
+            <span class="bidang__label">Password baru</span>
+            <input class="isian" type="password" name="new_password" autocomplete="new-password" minlength="8" required>
+            <p class="bidang__bantuan">Minimal 8 karakter. Ganti password bawaan sebelum situs dibuka untuk umum.</p>
+            <p class="bidang__galat"></p>
+          </label>
+          <button class="tbl tbl--kecil" type="submit" id="tombolPassword">Ganti password</button>
+        </form>
+      </section>
+    </div>
+  </div>
+
+  <!-- ------------------------------------------------- akun panitia -->
+  <section class="panel sembunyi" id="panelAkun">
+    <h2 class="panel__judul">Akun panitia <span>khusus ketua</span></h2>
+    <p class="bidang__bantuan" style="margin-bottom:var(--s-4)">
+      Beri setiap panitia akunnya sendiri supaya jejak aksi di dasbor jelas siapa yang memverifikasi pembayaran siapa.
+      Peran <b>ketua</b> boleh mengelola akun dan menghapus pendaftaran; peran <b>panitia</b> tidak.
+    </p>
+
+    <div class="pesan pesan--ingat sembunyi" id="kotakSandi" role="status" aria-live="polite"></div>
+
+    <div id="daftarAkun"></div>
+
+    <form id="formAkun" class="akun-tambah" novalidate>
+      <label class="bidang" data-bidang="name">
+        <span class="bidang__label">Nama panitia</span>
+        <input class="isian" type="text" name="name" maxlength="60" required placeholder="Contoh: Munawir">
+        <p class="bidang__galat"></p>
+      </label>
+      <label class="bidang" data-bidang="username">
+        <span class="bidang__label">Username</span>
+        <input class="isian" type="text" name="username" maxlength="24" required autocomplete="off"
+               spellcheck="false" placeholder="Contoh: munawir">
+        <p class="bidang__galat"></p>
+      </label>
+      <label class="bidang" data-bidang="role">
+        <span class="bidang__label">Peran</span>
+        <select class="isian" name="role">
+          <option value="panitia">Panitia</option>
+          <option value="ketua">Ketua</option>
+        </select>
+        <p class="bidang__galat"></p>
+      </label>
+      <button class="tbl tbl--kecil tbl--utama" type="submit" id="tombolAkun">Tambah akun</button>
+    </form>
+    <p class="bidang__bantuan">Password dibuat acak oleh sistem dan hanya ditampilkan sekali. Catat lalu kirimkan ke orangnya; ia bisa menggantinya sendiri lewat menu Ganti password.</p>
+  </section>
+</main>
+
+<script src="/js/api.js"></script>
+<script src="/js/admin-inti.js"></script>
+<script src="/js/admin-setelan.js"></script>
+</body>
+</html>
